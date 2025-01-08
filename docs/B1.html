@@ -209,12 +209,32 @@ body {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
     @media (prefers-color-scheme: light) {
+
+      .small-circle {
+  width: 8%;
+  height: 8%;
+  background-color: white; 
+  z-index: 6;
+}
+
+.circle-70 {
+  width: 77%;
+  height: 77%;
+  background: conic-gradient(#6E6E6E 0%, #3A3A3A 44%, #6E6E6E 100%);
+  border: 1px solid white; 
+  z-index: 2;
+}
+
+.circle-50 {
+  width: 55%;
+  height: 55%;
+  background: conic-gradient(#6E6E6E 0%, #3A3A3A 44%, #6E6E6E 100%);
+  border: 1px solid white; 
+  z-index: 4;
+}
+
       body {
-        background-image: url("./public/LightRager.gif");
         background-color: white;
-        background-repeat:no-repeat;
-        background-size:cover;
-        background-position:center;
     }
     .navbar{
         background-color: var(--bg-light) !important;
