@@ -22,40 +22,6 @@
     }
     /* Gradient for top border */
 /* Gradient for top border */
-.gradient-text-link {
-  position: relative;
-  display: inline-block;
-  opacity: 0.7 ;
-  text-decoration: none;
-  background: transparent;
-  transition: color 0.7s ease;
-  -webkit-background-clip: text; /* Ensures gradient is applied to the text */
-}
-
-/* On hover, apply the gradient to the text */
-.gradient-text-link:hover {
-  color: transparent; /* Make text transparent */
-  background-image: linear-gradient(90deg, #c26628, #ffec84); /* Gradient from left to right */
-  background-clip: text; /* Clip the background to the text */
-  -webkit-background-clip: text; /* For Safari */
-}
-.gradient-egg-link {
-  position: relative;
-  display: inline-block;
-  opacity: 0.7 ;
-  text-decoration: none;
-  background: transparent;
-  transition: color 0.7s ease;
-  -webkit-background-clip: text; /* Ensures gradient is applied to the text */
-}
-
-/* On hover, apply the gradient to the text */
-.gradient-egg-link:hover {
-  color: transparent; /* Make text transparent */
-  background-image: linear-gradient(90deg, #c26628, #ffec84); /* Gradient from left to right */
-  background-clip: text; /* Clip the background to the text */
-  -webkit-background-clip: text; /* For Safari */
-}
 .accordion-item.border-top-gradient {
   border-top: 1px solid transparent;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFF 52.07%, rgba(255, 255, 255, 0) 100%);
@@ -222,7 +188,30 @@
     #LightRager {
       display: block;
 }
+.border-top-gradient::before {
+  background-image: linear-gradient(270deg, rgba(255,255,255,0) 0%, #000 52.07%, rgba(255,255,255,0) 100%);
+}
+.border-bottom-gradient::after {
+  background-image: linear-gradient(270deg, rgba(255,255,255,0) 0%, #000 52.07%, rgba(255,255,255,0) 100%);
+}
     
+}
+.gradient-text-link {
+  position: relative !important;
+  display: inline-block !important;
+  opacity: 0.7 ;
+  text-decoration: none !important;
+  background: transparent !important;
+  transition: color 0.7s ease !important;
+  -webkit-background-clip: text !important; /* Ensures gradient is applied to the text */
+}
+
+/* On hover, apply the gradient to the text */
+.gradient-text-link:hover {
+  color: transparent !important; /* Make text transparent */
+  background-image: linear-gradient(90deg, #c26628, #ffec84) !important; /* Gradient from left to right */
+  background-clip: text !important; /* Clip the background to the text */
+  -webkit-background-clip: text !important; /* For Safari */
 }
 </style>
 
