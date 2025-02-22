@@ -11,6 +11,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <style>
+    .gradient-text-link2 {
+  position: relative !important;
+  display: inline-block !important;
+  opacity: 0.7 ;
+  text-decoration: none !important;
+  background: transparent !important;
+  transition: color 0.7s ease !important;
+  -webkit-background-clip: text !important; /* Ensures gradient is applied to the text */
+}
+
+/* On hover, apply the gradient to the text */
+.gradient-text-link2:hover {
+  color: transparent !important; /* Make text transparent */
+  background-image: linear-gradient(90deg, #FFF, #999B9B) !important; /* Gradient from left to right */
+  background-clip: text !important; /* Clip the background to the text */
+  -webkit-background-clip: text !important; /* For Safari */
+}
 
 #gradient-horizontal {
   --color-stop-1: #a770ef;
@@ -264,6 +281,9 @@
       <div class="collapse navbar-collapse navbar-dark bg-dark" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-dark">
           <li class="nav-item">
+            <a class="nav-link" href="./resmue">Resume</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="./academics">Academics</a>
           </li>
           <li class="nav-item">
@@ -274,6 +294,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link gradient-text-link" href="./B1">B1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link gradient-text-link2" href="https://intrepboard.web.app/">Intrepboard</a> <!-- Applied unique class here -->
           </li>
         </ul>
       </div>

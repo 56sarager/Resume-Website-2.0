@@ -17,7 +17,23 @@
     body {
       background-color: #060606 !important;
     }
+    .gradient-text-link2 {
+  position: relative !important;
+  display: inline-block !important;
+  opacity: 0.7 ;
+  text-decoration: none !important;
+  background: transparent !important;
+  transition: color 0.7s ease !important;
+  -webkit-background-clip: text !important; /* Ensures gradient is applied to the text */
+}
 
+/* On hover, apply the gradient to the text */
+.gradient-text-link2:hover {
+  color: transparent !important; /* Make text transparent */
+  background-image: linear-gradient(90deg, #FFF, #999B9B) !important; /* Gradient from left to right */
+  background-clip: text !important; /* Clip the background to the text */
+  -webkit-background-clip: text !important; /* For Safari */
+}
     .border-top-gradient {
   position: relative;
 }
@@ -238,6 +254,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link gradient-text-link" href="./B1">B1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link gradient-text-link2" href="https://intrepboard.web.app/">Intrepboard</a> <!-- Applied unique class here -->
           </li>
          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
