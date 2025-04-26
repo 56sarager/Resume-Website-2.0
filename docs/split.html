@@ -11,9 +11,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <style>
-     body {
-      background-color: #060606
+    body {
+        background-image: url("./public/DarkRager.gif");
+        background-color: black;
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;
     }
+.gradient-text-link2 {
+  position: relative !important;
+  display: inline-block !important;
+  opacity: 0.7 ;
+  text-decoration: none !important;
+  background: transparent !important;
+  transition: color 0.7s ease !important;
+  -webkit-background-clip: text !important;
+}
+
+.gradient-text-link2:hover {
+  color: transparent !important; 
+  background-image: linear-gradient(90deg, #FFF, #007AFF) !important; 
+  background-clip: text !important; 
+  -webkit-background-clip: text !important;
+}
     .border-top-gradient {
   position: relative;
 }
@@ -79,7 +99,7 @@
     }
     .gradient-text {
         font-family: "Roboto", sans-serif;
-        background: linear-gradient(to top, #c26628, #ffec84);
+        background: linear-gradient(90deg, #3a5c45, #afff84);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -145,37 +165,64 @@
   text-decoration: none !important;
   background: transparent !important;
   transition: color 0.7s ease !important;
-  -webkit-background-clip: text !important; /* Ensures gradient is applied to the text */
+  -webkit-background-clip: text !important; 
 }
 
-/* On hover, apply the gradient to the text */
 .gradient-text-link:hover {
-  color: transparent !important; /* Make text transparent */
-  background-image: linear-gradient(90deg, #c26628, #ffec84) !important; /* Gradient from left to right */
-  background-clip: text !important; /* Clip the background to the text */
-  -webkit-background-clip: text !important; /* For Safari */
-}
-
-.gradient-text-link2 {
-  position: relative !important;
-  display: inline-block !important;
-  opacity: 0.7 ;
-  text-decoration: none !important;
-  background: transparent !important;
-  transition: color 0.7s ease !important;
-  -webkit-background-clip: text !important; /* Ensures gradient is applied to the text */
-}
-
-/* On hover, apply the gradient to the text */
-.gradient-text-link2:hover {
-  color: transparent !important; /* Make text transparent */
-  background-image: linear-gradient(90deg, #FFF, #007AFF) !important; /* Gradient from left to right */
-  background-clip: text !important; /* Clip the background to the text */
-  -webkit-background-clip: text !important; /* For Safari */
+  color: transparent !important; 
+  background-image: linear-gradient(90deg, #2e7d32, #a5d6a7) !important; 
+  background-clip: text !important; 
+  -webkit-background-clip: text !important; 
 }
 
 #featured-3 {
   height: 200px;
+}
+.card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      opacity: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 10px;
+      width: 400px;
+      min-height: 40px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transform: translateX(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .slide-in-left {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .slide-in-right {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hidden-left {
+      transform: translateX(-100%);
+    }
+
+    .hidden-right {
+      transform: translateX(100%);
+    }
+    .custom-hover:hover {
+  border: 2px solid rgba(11, 170, 237, 0.7); 
+}
+.custom-hover {
+  border: 1px solid rgba(255, 255, 255, 0.7); 
 }
   </style>
 </head>
@@ -198,42 +245,38 @@
             <!--<a class="nav-link active" aria-current="page" href="#">Home</a>-->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./split">Split</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="./academics">Academics</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./travel">Travel</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link gradient-text-link" href="./B1">B1</a> <!-- Applied unique class here -->
+            <a class="nav-link gradient-text-link" href="./B1">B1</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link gradient-text-link2" href="https://intrepboard.web.app/">Intrepboard</a> <!-- Applied unique class here -->
+            <a class="nav-link gradient-text-link2" href="https://intrepboard.web.app/">Intrepboard</a> 
           </li>
         </ul>
       </div>
     </div>
   </nav>  
 
-  <div>
-    <iframe class="pdf px-5 pt-3 pb-3" src="./public/Resume2_10_2025 (2).pdf" width="100%" height="1200px"></iframe>
+  <div class="px-4 pt-5 text-center">
+    <h1 class="gradient-text display-4 fw-bold">
+      <button id="generateBtn" class="btn btn-lg custom-hover px-5">Generate</button>
+    </h1>
   </div>
-  <!--<div class="offcanvas offcanvas-top" 
-  style="height: 60px" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-    <div class="offcanvas-header h-10">
-      <div class="col-3"></div>
-      <img src="./public/Instagram.png" alt="Instagram Logo" height="40"/>
-      <h3 id="offcanvasTopLabel"><a class="text-dark col-2" href="#"  style="text-decoration:none">serhodes99</a></h3>
-      <p class="text-dark">(Love a good pseudonym)</p>
-      <div class="col-2"></div>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-  </div>-->
 
   <div class="container">
-    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-3 border-top-gradient">
+    <div class="card-container">
+      <div class="card hidden-left" id="card1">Item 1</div>
+      <div class="card hidden-right" id="card2">Item 2</div>
+      <div class="card hidden-left" id="card3">Item 3</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top-gradient">
       <div class="col mb-3">
         <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
           <svg class="bi me-2" width="40" height="32">
@@ -283,11 +326,90 @@
             }
         }
 
-        // Initial check
         setTogglerIconColor();
 
-        // Listen for changes in dark mode preference
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTogglerIconColor);
+        const array1 = ["Kaz Press 3x20", "Rope Tricep Pushdown 3x20", "Single Arm Tricep Extension 5x10",
+            "Two Arm Tricep Extension 5x10", "Straight Bar Cable Pushdown 5x10", "Katanas 4x12", "Feet Forward Dips 4x15", 
+            "Cable Tricep Extension 5x10", "Stretch-Biased Pushup 5x10", "Dumbbell Skullcrusher 5x10", "Easy Bar Skullcrusher 5x10"
+        ];
+        const array2 = ["Preacher Curl (Slow Eccentric)", "7's (Cheat)", "Baysian Curl 5x20", "Lying Dumbbell Curl 5x20", "Chin Ups (Slow Eccentric)"];
+        const array3 = ["Hammer Curl", "Reverse Grip Curl", "Sledgehammer", "Gaffer Grip", "Plate Flip", 
+            "Behind the Back Wrist Curl", "Forward/ Backward Wrist Curls Dumbbell Wrist Curl", "Cable Wrist Curl", 
+            "Deadhang", "Lock Off", "Dumbbell Farmer Carry/ Iso Hold", "Trap Bar Farmer Carry/ Iso Hold", "Barbell Wrist Rotation",
+            "Plate Farmer Carry/ Iso Hold"
+        ];
+
+        const dict1 = Object.fromEntries(array1.map((val, i) => [i, val]));
+    const dict2 = Object.fromEntries(array2.map((val, i) => [i, val]));
+    const dict3 = Object.fromEntries(array3.map((val, i) => [i, val]));
+
+    function getRandomValue(dict) {
+      const keys = Object.keys(dict);
+      const randomKey = keys[Math.floor(Math.random() * keys.length)];
+      return dict[randomKey];
+    }
+
+   function animateCard(card, text, slideClass) {
+  card.textContent = text;
+
+  card.classList.remove("slide-in-left", "slide-in-right", "hidden-left", "hidden-right");
+
+  void card.offsetWidth;
+
+  if (slideClass === "slide-in-left") {
+    card.classList.add("hidden-left");
+  } else if (slideClass === "slide-in-right") {
+    card.classList.add("hidden-right");
+  }
+
+  void card.offsetWidth;
+
+  card.classList.remove("hidden-left", "hidden-right");
+  card.classList.add(slideClass);
+}
+
+
+    function generateRandomItems() {
+  const card1 = document.getElementById("card1");
+  const card2 = document.getElementById("card2");
+  const card3 = document.getElementById("card3");
+
+  [card1, card2, card3].forEach(card => {
+    card.classList.remove("slide-in-left", "slide-in-right", "hidden-left", "hidden-right");
+    void card.offsetWidth; 
+  });
+
+  animateCard(card1, getRandomValue(dict1), "slide-in-left");
+  animateCard(card2, getRandomValue(dict2), "slide-in-right");
+  animateCard(card3, getRandomValue(dict3), "slide-in-left");
+}
+
+document.getElementById("generateBtn").addEventListener("click", () => {
+  const cards = document.querySelectorAll(".card");
+  const newTexts = [
+    getRandomValue(dict1),
+    getRandomValue(dict2),
+    getRandomValue(dict3)
+  ];
+
+  cards.forEach((card, index) => {
+    card.classList.remove("slide-in-left", "slide-in-right");
+    card.style.opacity = "0";
+    card.style.transform = index % 2 === 0 ? "translateX(-100%)" : "translateX(100%)";
+  });
+
+  setTimeout(() => {
+    cards.forEach((card, index) => {
+      card.textContent = newTexts[index];
+      card.style.transform = "translateX(0)";
+      card.style.opacity = "1";
+      card.classList.add(index % 2 === 0 ? "slide-in-left" : "slide-in-right");
+    });
+  }, 600); 
+});
+
+
   </script>
 </body>
 
